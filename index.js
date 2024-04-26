@@ -6,8 +6,15 @@ const app = express();
 dotenv.config();
 connectDB();
 app.use(express.json());
-
+app.get("/", (req,res)=>{
+    res.status(200).send({
+        status:200,
+        sucesss:true,
+        message:"Welcome to Hemant's world"
+    })
+})
 app.use("/api/v1/user",userRoutes);
+
 
 const PORT = process.env.PORT || 4000;
 

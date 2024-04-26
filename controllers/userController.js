@@ -1,12 +1,12 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
-exports.defaultget =(req,res)=>{
- res.send({
-    status:200,
-    sucess:true,
-    message:"Hii, Congratulations ! Welcome to Hemant's World"
-   })
-}
+// exports.defaultget =(req,res)=>{
+//  res.send({
+//     status:200,
+//     sucess:true,
+//     message:"Hii, Congratulations ! Welcome to Hemant's World"
+//    })
+// };
 
 exports.registeruser=async(req,res)=>{
  const {name, email, password} = req.body;

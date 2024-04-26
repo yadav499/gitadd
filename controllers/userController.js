@@ -1,7 +1,7 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 exports.defaultget =(req,res)=>{
-  return res.send({
+ res.send({
     status:200,
     sucess:true,
     message:"Hii, Congratulations ! Welcome to Hemant's World"

@@ -1,12 +1,13 @@
 const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const userRoutes = require("./router/userRoutes");
 const app = express();
+dotenv.config();
+connectDB();
 app.use(express.json());
-app.get("/", (req,res)=>{
-    res.send({
-        status:200,
-        message:"Hello, My name is Hemant"
-    })
-})
+
+app.use("/api/v1/",userRoutes);
 
 app.post("/register", (req,res)=>{
     const {name, message} =req.body;

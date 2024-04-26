@@ -7,21 +7,10 @@ dotenv.config();
 connectDB();
 app.use(express.json());
 
-app.use("/api/v1/",userRoutes);
+app.use("/api/v1/user",userRoutes);
 
-app.post("/register", (req,res)=>{
-    const {name, message} =req.body;
-    res.send({
-        status:200,
-        success:true,
-        data:{
-            name,
-            message
-        }
+const PORT = process.env.PORT || 4000;
 
-    })
-})
-
-app.listen(4000,()=>{
+app.listen(PORT,()=>{
     console.log("Server is running on the port 4000");
 })
